@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Puff Delivery – Proaspăt. Rapid. Delicios.</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #F5A623;
+    --gold-dark: #c87d0a;
+    --red: #D0021B;
+    --dark: #0A0A0A;
+    --dark2: #141414;
+    --dark3: #1E1E1E;
+    --text: #F0EDE6;
+    --muted: #888;
+    --border: rgba(255,255,255,0.07);
+    --gold-border: rgba(245,166,35,0.2);
+  }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { background: var(--dark); color: var(--text); font-family: 'Nunito', sans-serif; font-size: 15px; line-height: 1.6; overflow-x: hidden; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+    background: rgba(10,10,10,0.97);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--gold-border);
+    height: 60px; display: flex; align-items: center;
+    padding: 0 clamp(1rem, 4vw, 2.5rem); gap: 1rem;
+  }
+  .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 2px; color: var(--gold); text-decoration: none; flex-shrink: 0; }
+  .nav-logo span { color: var(--red); }
+  .nav-links { display: flex; align-items: center; gap: 1.5rem; list-style: none; margin-left: auto; }
+  .nav-links a { color: var(--muted); text-decoration: none; font-size: 12px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; transition: color 0.2s; white-space: nowrap; }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta { background: var(--red) !important; color: #fff !important; padding: 8px 18px !important; border-radius: 4px; }
+  .nav-cta:hover { background: #a8001c !important; }
+  .hamburger { display: none; flex-direction: column; justify-content: center; align-items: center; gap: 5px; cursor: pointer; margin-left: auto; width: 36px; height: 36px; flex-shrink: 0; }
+  .hamburger span { width: 22px; height: 2px; background: var(--gold); display: block; border-radius: 2px; transition: all 0.3s; }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .mobile-menu { display: none; position: fixed; top: 60px; left: 0; right: 0; z-index: 199; background: rgba(10,10,10,0.99); border-bottom: 1px solid var(--gold-border); padding: 1.5rem; flex-direction: column; gap: 0; }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; padding: 0.75rem 0; border-bottom: 1px solid var(--border); transition: color 0.2s; }
+  .mobile-menu a:last-child { border-bottom: none; color: var(--gold); padding-top: 1rem; }
+  .mobile-menu a:hover { color: var(--gold); }
+
+  /* HERO */
+  .hero { min-height: 100svh; padding-top: 60px; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; overflow: hidden; background: radial-gradient(ellipse at 50% 90%, rgba(208,2,27,0.22) 0%, transparent 55%), radial-gradient(ellipse at 85% 10%, rgba(245,166,35,0.12) 0%, transparent 45%), var(--dark); }
+  .hero-pattern { position: absolute; inset: 0; opacity: 0.035; background-image: repeating-linear-gradient(0deg, var(--gold) 0, var(--gold) 1px, transparent 1px, transparent 60px), repeating-linear-gradient(90deg, var(--gold) 0, var(--gold) 1px, transparent 1px, transparent 60px); }
+  .hero-content { position: relative; z-index: 1; padding: clamp(1.5rem, 5vw, 3rem); max-width: 860px; width: 100%; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--red); color: #fff; font-size: 10px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; padding: 6px 16px; border-radius: 2px; margin-bottom: clamp(1rem, 3vw, 1.8rem); animation: fadeUp 0.6s ease both; }
+  .flame { animation: flicker 1.4s ease-in-out infinite alternate; }
+  .hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(4rem, 14vw, 10rem); line-height: 0.88; letter-spacing: 4px; color: var(--text); animation: fadeUp 0.7s ease 0.1s both; }
+  .hero h1 em { color: var(--gold); font-style: normal; display: block; }
+  .hero-sub { font-size: clamp(0.9rem, 2.5vw, 1.1rem); color: var(--muted); margin: clamp(1rem,3vw,1.8rem) auto clamp(1.5rem,4vw,2.5rem); animation: fadeUp 0.7s ease 0.2s both; max-width: 500px; }
+  .hero-btns { display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap; animation: fadeUp 0.7s ease 0.3s both; }
+  .btn-primary { background: var(--gold); color: #000; padding: clamp(11px,2vw,14px) clamp(24px,4vw,36px); font-size: clamp(12px,2vw,14px); font-weight: 800; letter-spacing: 1px; text-transform: uppercase; border-radius: 4px; text-decoration: none; transition: background 0.15s, transform 0.15s; white-space: nowrap; display: inline-block; }
+  .btn-primary:hover { background: var(--gold-dark); transform: translateY(-2px); }
+  .btn-outline { border: 1.5px solid var(--gold-border); color: var(--gold); padding: clamp(11px,2vw,14px) clamp(24px,4vw,36px); font-size: clamp(12px,2vw,14px); font-weight: 800; letter-spacing: 1px; text-transform: uppercase; border-radius: 4px; text-decoration: none; transition: border-color 0.15s, background 0.15s; white-space: nowrap; display: inline-block; }
+  .btn-outline:hover { background: rgba(245,166,35,0.08); border-color: var(--gold); }
+  .hero-stats { display: flex; justify-content: center; gap: clamp(1.5rem, 5vw, 4rem); flex-wrap: wrap; margin-top: clamp(2.5rem, 6vw, 4.5rem); animation: fadeUp 0.7s ease 0.4s both; }
+  .stat-item { text-align: center; }
+  .stat-val { font-family: 'Bebas Neue', sans-serif; font-size: clamp(1.6rem,4vw,2.2rem); color: var(--gold); letter-spacing: 2px; line-height: 1; }
+  .stat-lbl { font-size: 10px; color: var(--muted); letter-spacing: 2px; text-transform: uppercase; margin-top: 4px; }
+  .stat-sep { width: 1px; background: var(--border); align-self: stretch; margin: 4px 0; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+  @keyframes flicker { 0% { opacity: 0.75; transform: scaleY(0.97); } 100% { opacity: 1; transform: scaleY(1.06); } }
+
+  /* SECTIONS */
+  .section { padding: clamp(3.5rem, 8vw, 6rem) clamp(1rem, 4vw, 2rem); }
+  .container { max-width: 1200px; margin: 0 auto; }
+  .section-eyebrow { font-size: 10px; font-weight: 800; letter-spacing: 4px; text-transform: uppercase; color: var(--red); margin-bottom: 0.4rem; }
+  .section-heading { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2rem,5vw,3.5rem); letter-spacing: 3px; color: var(--text); line-height: 1; }
+  .section-heading span { color: var(--gold); }
+  .heading-rule { width: 52px; height: 3px; background: linear-gradient(90deg, var(--red), var(--gold)); border-radius: 2px; margin: 1rem 0 2.5rem; }
+
+  /* TABS */
+  .tab-row { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+  .tab-btn { background: var(--dark3); border: 1px solid var(--border); color: var(--muted); padding: 9px 18px; border-radius: 4px; font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: all 0.2s; white-space: nowrap; }
+  .tab-btn:hover { color: var(--gold); border-color: var(--gold-border); }
+  .tab-btn.active { background: var(--gold); color: #000; border-color: var(--gold); }
+
+  /* MENU GRID */
+  .menu-panel { display: none; }
+  .menu-panel.active { display: block; }
+  .menu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); gap: 16px; }
+  .menu-card { background: var(--dark2); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s; display: flex; flex-direction: column; }
+  .menu-card:hover { border-color: rgba(245,166,35,0.35); transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.5); }
+  .card-img-wrap { overflow: hidden; position: relative; aspect-ratio: 16/10; background: var(--dark3); }
+  .card-img-wrap::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 50px; background: linear-gradient(transparent, var(--dark2)); pointer-events: none; }
+  .card-img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+  .menu-card:hover .card-img { transform: scale(1.05); }
+  .card-body { padding: 1rem 1.1rem 1.2rem; flex: 1; display: flex; flex-direction: column; }
+  .card-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.15rem; letter-spacing: 2px; color: var(--gold); margin-bottom: 0.35rem; line-height: 1.1; }
+  .card-desc { font-size: 12.5px; color: var(--muted); line-height: 1.55; flex: 1; }
+
+  /* CONTACT */
+  .contact-wrap { background: var(--dark2); border-top: 1px solid var(--gold-border); border-bottom: 1px solid var(--gold-border); }
+  .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: clamp(1.2rem,3vw,2rem); }
+  .contact-item { display: flex; align-items: flex-start; gap: 1rem; }
+  .ci-icon { width: 42px; height: 42px; flex-shrink: 0; background: rgba(245,166,35,0.08); border: 1px solid var(--gold-border); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 17px; }
+  .ci-label { font-size: 10px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 3px; }
+  .ci-val { font-size: 13.5px; color: var(--text); line-height: 1.5; }
+  .ci-val a { color: var(--gold); text-decoration: none; }
+
+  /* FOOTER */
+  footer { background: var(--dark); padding: clamp(2rem,5vw,3rem) clamp(1rem,4vw,2rem); text-align: center; border-top: 1px solid var(--border); }
+  .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 3px; color: var(--gold); }
+  .footer-logo span { color: var(--red); }
+  footer p { color: var(--muted); font-size: 12.5px; margin-top: 0.4rem; line-height: 1.7; }
+  .footer-tagline { font-family: 'Bebas Neue', sans-serif; font-size: 1rem; letter-spacing: 4px; color: var(--gold); margin-top: 0.8rem; opacity: 0.6; }
+
+  /* REVEAL */
+  .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.55s ease, transform 0.55s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* RESPONSIVE */
+  @media (max-width: 760px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .stat-sep { display: none; }
+    .hero-btns { flex-direction: column; align-items: center; }
+    .btn-primary, .btn-outline { width: 100%; max-width: 280px; text-align: center; }
+    .tab-btn { padding: 7px 12px; font-size: 10px; letter-spacing: 1.5px; }
+  }
+  @media (max-width: 480px) {
+    .menu-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+  }
+  @media (min-width: 900px) {
+    .menu-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#"><span>La</span> Puff</a>
+  <ul class="nav-links">
+    <li><a href="#menu">Meniu</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="tel:0764059276" class="nav-cta">☎ Comandă Acum</a></li>
+  </ul>
+  <div class="hamburger" id="hbg" onclick="toggleMenu()" aria-label="Meniu">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-menu" id="mob-menu">
+  <a href="#menu" onclick="closeMenu()">Meniu</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
+  <a href="tel:0764059276">☎ 0764 059 276</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-pattern"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><span class="flame">🔥</span> Gustul care te face să revii</div>
+    <h1>La <em>Puff</em> Delivery</h1>
+    <p class="hero-sub">Proaspăt. Rapid. Delicios. — Livrăm direct la tine acasă sau ridici din sediu.</p>
+    <div class="hero-btns">
+      <a href="#menu" class="btn-primary">Vezi Meniul</a>
+      <a href="tel:0764059276" class="btn-outline">☎ 0764 059 276</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item"><div class="stat-val">9:00</div><div class="stat-lbl">Deschidem</div></div>
+      <div class="stat-sep"></div>
+      <div class="stat-item"><div class="stat-val">21:00</div><div class="stat-lbl">Închidem</div></div>
+      <div class="stat-sep"></div>
+      <div class="stat-item"><div class="stat-val">7/7</div><div class="stat-lbl">Zile</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section class="section" id="menu">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-eyebrow">Ce dorim azi?</p>
+      <h2 class="section-heading">Meniul <span>Nostru</span></h2>
+      <div class="heading-rule"></div>
+    </div>
+    <div class="tab-row reveal">
+      <button class="tab-btn active" onclick="showTab('panini',this)">Panini</button>
+      <button class="tab-btn" onclick="showTab('pizza',this)">Pizza</button>
+      <button class="tab-btn" onclick="showTab('shaorma',this)">Shaorma</button>
+      <button class="tab-btn" onclick="showTab('paste',this)">Paste</button>
+      <button class="tab-btn" onclick="showTab('salate',this)">Salate</button>
+      <button class="tab-btn" onclick="showTab('meniuri',this)">Meniuri</button>
+      <button class="tab-btn" onclick="showTab('boxuri',this)">Boxuri</button>
+    </div>
+
+    <!-- PANINI -->
+    <div class="menu-panel active" id="tab-panini">
+      <div class="menu-grid">
+        <div class="menu-card">
+          <div class="card-img-wrap"><img class="card-img" src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&q=80" alt="Panini Crispy" loading="lazy"></div>
+          <div class="card-body"><div class="card-name">Panini Crispy</div><p class="card-desc">Lipie, crispy pui 150g, cartofi prăjiți, iceberg 100g, castraveți murați 30g, salată iceberg 30g, ceapă crispy 20g, parmezan 10g, sos cheddar 30g, sos maioneză 30g, verdeață</p></div>
+        </div>
+        <div class="menu-card">
+          <div class="card-img-wrap"><img class="card-img" src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=600&q=80" alt="Panini El Pollo" loading="lazy"></div>
+          <div class="card-body"><div class="card-name">Panini El Pollo</div><p class="card-desc">Lipie, șnițel pui/porc 150g, cartofi prăjiți, mozzarella 50g, salată iceberg 30g, roșii 30g, sos napoli 30g, sosul casei 30g, verdeață</p></div>
+        </div>
+        <div class="menu-card">
+          <div class="card-img-wrap"><img class="card-img" src="https://images.unsplash.com/photo-1481070414801-51fd732d7184?w=600&q=80" alt="Panini Fresh" loading="lazy"></div>
+          <div class="card-body"><div class="card-name">Panini Fresh</div><p class="card-desc">Lipie, șuncă praga 150g, mozzarella 50g, castraveți proaspeți 30g, roșii 30g, salată iceberg 30g, parmezan 10g, cremă de brânză 50g</p></div>
+        </div>
+        <div class="menu-card">
+          <div class="card-img-wrap"><img class="card-img" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80" alt="Panini El Porc" loading="lazy"></div>
+          <div class="card-body"><div class="card-name">Panini El Porc</div><p class="card-desc">Lipie, șnițel porc panko 150g, cartofi prăjiți 100g, salată de varză 30g, roșii 30g, sos usturoi 30g, sosul casei 30g, parmezan 10g, verdeață</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PIZZA -->
+    <div class="menu-panel" id="tab-pizza">
+      <div class="menu-grid">
+        <div class="menu-card">
+          <div class="card-img-wrap"><img class="card-img" src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80" alt="Pizza Casei" loading="lazy"></div>
+          <div class="card-body"><div class="card-name">Pizza Casei</div><p class="card-desc">Aluat, bacon 30g, șuncă praga 30g, cârnați 30g, ciuperci proaspete 30g, ardei gras roșu 30g, măsline 30g, sos roșii 30g</p></div>
+        </div>
+        <div class="menu-card">
+          <div class="card-img-wrap"><img class="card-img" src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=600&q=80" alt="Pizza Quattro Stagioni" loading="lazy"></div>
+          <div class="card-body"><div class="card-name">Pizza Quattro Stagioni</div><p class="card-desc">Aluat, sos roșii 30g, mozzarella 100g, salam 30g, șuncă praga 30g, ciuperci 50g, măsline 30g</p></div>
+        </div>
+        <div class="menu-card">
+          <div class="card-img-wrap"><img class="card-img" src="https://images.unsplash.com/photo-1594007654729-407eedc4be65?w=600&q=80" alt="Pizza Quattro Carni" loading="lazy"></div>
+          <div class="card-body"><div class="card-name">Pizza Quattro Carni</div><p class="card-desc">Aluat, sos roșii 30g, mozzarella 100g, salam 30g, șuncă praga 30g, bacon 30g, cârnați 30g</p></div>
+        </div>
+        <div class="menu-card">
+          <div class="card-img-wrap"><img class="card-img" src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&q=80" alt="Pizza Prosciutto e Funghi" loading="lazy"></div>
+          <div class="card-body"><div class="card-name">Pizza Prosciutto e Funghi</div><p class="card-desc">Aluat, sos roșii 30g, mozzarella 100g, șuncă praga 30g, ciuperci 60g</p></div>
+        </div>
+        <div class="menu-card">
+          <div class="card-img-wrap"><img class="card-img" src="https://images.unsplash.com/photo-1628840042765-356cda07504e?w=600&q=80" alt="Pizza Diavola" loading="lazy"></div>
+          <div class="card-body"><div class="card-name">Pizza Diavola</div><p class="card-desc">Aluat, sos roșii 30g, mozzarella 100g, salam 60g, cârnați 30g, ardei iute 20g</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHAORMA -->
+    <div class="menu-panel" id="tab-shaorma">
+      <div class="menu-grid">
+        <div class="menu-card">
+          <div class="card-img-wrap"><img class="card-img" src="https://images.unsplash.com/photo-1530469912745-a215c6b256ea?w=600&q=80" alt="Shaorma Crispy" loading="lazy"></div>
+          <div class="card-body"><div class="card-name">Shaorma Crispy</div><p class="card-desc">Lipie, crispy pui 100g, cartofi prăjiți 100g, salată iceberg 30g, salată de varză 30g, castraveți murați 30g, mozzarella 30g, 2 sosuri la alegere 50g</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PASTE -->
+    <div class="menu-panel" id="tab-paste">
+      <div class="menu-grid">
+        <div class="menu-card">
+          <div class="card-img-wrap"><img class="card-img" src="https://images.unsplash.com/photo-1612874742237-6526221588e3?w=600&q=80" alt="Paste Carbonara" loading="lazy"></div>
+          <div class="card-body"><div class="card-name">Paste Carbonara</div><p class="card-desc">Spaghete/penne 200g, bacon 50g, smântână 40g, salată ou, parmezan 30g</p></div>
+        </div>
+        <div class="menu-card">
+          <div class="card-img-wrap"><img class="card-img" src="https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?w=600&q=80" alt="Paste Pollo" loading="lazy"></div>
+          <div class="card-body"><div class="card-name">Paste Pollo</div><p class="card-desc">Spaghete/penne 200g, piept de pui 100g, sos napoli 100g, parmezan 30g</p></div>
+        </div>
+        <div class="menu-card">
+          <div class="card-img-wrap"><img class="card-img" src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600&q=80" alt="Paste Milaneze" loading="lazy"></div>
+          <div class="card-body"><div class="card-name">Paste Milaneze</div><p class="card-desc">Spaghete/penne 200g, șuncă praga 50g, sos napoli 100g, ciuperci 50g, parmezan 30g</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SALATE -->
+    <div class="menu-panel" id="tab-salate">
+      <div class="menu-grid">
+        <div class="menu-card">
+          <div class="card-img-wrap"><img class="card-img" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=80" alt="Salată Crispy" loading="lazy"></div>
+          <div class="card-body"><div class="card-name">Salată Crispy</div><p class="card-desc">Salată iceberg 100g, crispy pui 100g, roșii 100g, ciuperci proaspete 30g, morcov ras 30g, măsline 30g, sosul casei 50g</p></div>
+        </div>
+        <div class="menu-card">
+          <div class="card-img-wrap"><img class="card-img" src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&q=80" alt="Salată Bulgărească" loading="lazy"></div>
+          <div class="card-body"><div class="card-name">Salată Bulgărească</div><p class="card-desc">Salată iceberg 100g, șuncă praga 50g, telemea 50g, ou, roșii 100g, castraveți 50g, măsline 30g, ceapă 20g</p></div>
+        </div>
+        <div class="menu-card">
+          <div class="card-img-wrap"><img class="card-img" src="https://images.unsplash.com/photo-1607532941433-304659e8198a?w=600&q=80" alt="Salată de Varză" loading="lazy"></div>
+          <div class="card-body"><div class="card-name">Salată de Varză</div><p class="card-desc">Varză albă 200g, ulei, sare, piper, oțet</p></div>
+        </div>
+        <div class="menu-card">
+          <div class="card-img-wrap"><img class="card-img" src="https://images.unsplash.com/photo-1498557850523-fd3d118b962e?w=600&q=80" alt="Salată de Vară" loading="lazy"></div>
+          <div class="card-body"><div class="card-name">Salată de Vară</div><p class="card-desc">Roșii 100g, castraveți 50g, ardei gras 50g</p></div>
+        </div>
+        <div class="menu-card">
+          <div class="card-img-wrap"><img class="card-img" src="https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?w=600&q=80" alt="Salată de Castraveți Murați" loading="lazy"></div>
+          <div class="card-body"><div class="card-name">Salată de Castraveți Murați</div><p class="card-desc">Castraveți murați 200g</p></div>
+        </div>
+        <div class="menu-card">
+          <div class="card-img-wrap"><img class="card-img" src="https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?w=600&q=80" alt="Salată Caprese" loading="lazy"></div>
+          <div class="card-body"><div class="card-name">Salată Caprese</div><p class="card-desc">Roșii 100g, mozzarella 100g, oregano, ulei de măsline</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MENIURI -->
+    <div class="menu-panel" id="tab-meniuri">
+      <div class="menu-grid">
+        <div class="menu-card">
+          <div class="card-img-wrap"><img class="card-img" src="https://images.unsplash.com/photo-1558030006-450675393462?w=600&q=80" alt="Șnițel Pui/Porc" loading="lazy"></div>
+          <div class="card-body"><div class="card-name">Șnițel Pui/Porc</div><p class="card-desc">Șnițel pui/porc panko 200g, cartofi prăjiți 200g, sos napoli 50g, mozzarella 50g, cartofi cu parmezan și usturoi 200g, lipie, sosul casei 50g</p></div>
+        </div>
+        <div class="menu-card">
+          <div class="card-img-wrap"><img class="card-img" src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80" alt="Șnițel Gratinat" loading="lazy"></div>
+          <div class="card-body"><div class="card-name">Șnițel Pui/Porc Gratinat</div><p class="card-desc">Șnițel pui/porc panko 200g, cartofi prăjiți 200g, sos cheddar 50g, ceapă crispy 30g, lipie</p></div>
+        </div>
+        <div class="menu-card">
+          <div class="card-img-wrap"><img class="card-img" src="https://images.unsplash.com/photo-1562967914-608f82629710?w=600&q=80" alt="Crispy Panko" loading="lazy"></div>
+          <div class="card-body"><div class="card-name">Crispy Panko</div><p class="card-desc">Crispy pui panko 200g, cartofi prăjiți 200g, sosul casei 50g, lipie</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOXURI -->
+    <div class="menu-panel" id="tab-boxuri">
+      <div class="menu-grid">
+        <div class="menu-card">
+          <div class="card-img-wrap"><img class="card-img" src="https://images.unsplash.com/photo-1585325701956-60dd9c8553bc?w=600&q=80" alt="Box Crispy" loading="lazy"></div>
+          <div class="card-body"><div class="card-name">Box Crispy</div><p class="card-desc">Crispy pui 100g, cartofi prăjiți 100g, salată iceberg 30g, sosul casei 50g, sos usturoi 50g, ceapă crispy 20g</p></div>
+        </div>
+        <div class="menu-card">
+          <div class="card-img-wrap"><img class="card-img" src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80" alt="Box Cârnați" loading="lazy"></div>
+          <div class="card-body"><div class="card-name">Box Cârnați</div><p class="card-desc">Cârnați 100g, cartofi prăjiți 100g, sosul casei la alegere 50g</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact-wrap" id="contact">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-eyebrow">Unde ne găsești</p>
+      <h2 class="section-heading">Contact & <span>Program</span></h2>
+      <div class="heading-rule"></div>
+    </div>
+    <div class="contact-grid reveal">
+      <div class="contact-item">
+        <div class="ci-icon">📍</div>
+        <div><div class="ci-label">Adresă</div><div class="ci-val">Strada Alexandru Ioan Cuza,<br>Bloc A9, Scara A</div></div>
+      </div>
+      <div class="contact-item">
+        <div class="ci-icon">📞</div>
+        <div><div class="ci-label">Telefon</div><div class="ci-val"><a href="tel:0764059276">0764 059 276</a></div></div>
+      </div>
+      <div class="contact-item">
+        <div class="ci-icon">🕐</div>
+        <div><div class="ci-label">Program</div><div class="ci-val">Luni – Duminică<br>9:00 – 21:00</div></div>
+      </div>
+      <div class="contact-item">
+        <div class="ci-icon">🛍</div>
+        <div><div class="ci-label">Ridicare</div><div class="ci-val">Comandă pachet,<br>ridici din sediu</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo"><span>La</span> Puff Delivery</div>
+  <p>Strada Alexandru Ioan Cuza, Bloc A9, Scara A<br>☎ 0764 059 276 &nbsp;·&nbsp; 9:00 – 21:00, Luni – Duminică</p>
+  <div class="footer-tagline">Proaspăt · Rapid · Delicios</div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('hbg').classList.toggle('open');
+    document.getElementById('mob-menu').classList.toggle('open');
+  }
+  function closeMenu() {
+    document.getElementById('hbg').classList.remove('open');
+    document.getElementById('mob-menu').classList.remove('open');
+  }
+  document.addEventListener('click', e => {
+    if (!e.target.closest('nav') && !e.target.closest('.mobile-menu')) closeMenu();
+  });
+  function showTab(id, btn) {
+    document.querySelectorAll('.menu-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    btn.classList.add('active');
+  }
+  const ro = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i * 70); ro.unobserve(e.target); }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+</script>
+</body>
+</html>
