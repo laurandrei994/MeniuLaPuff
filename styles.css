@@ -228,6 +228,7 @@ footer {
 .footer-logo span { color: var(--red); }
 footer p { color: var(--muted); font-size: 12.5px; margin-top: 0.5rem; line-height: 1.7; }
 .footer-tagline { font-family: 'Bebas Neue', sans-serif; font-size: 1rem; letter-spacing: 5px; color: var(--gold); margin-top: 1rem; opacity: 0.5; }
+.footer-allergen { font-size: 11px; color: var(--muted); margin-top: 1.2rem; max-width: 560px; margin-left: auto; margin-right: auto; line-height: 1.6; opacity: 0.7; }
 
 /* REVEAL */
 .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.55s ease, transform 0.55s ease; }
