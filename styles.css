@@ -196,7 +196,7 @@ nav {
 .contact-wrap { background: var(--dark2); border-top: 1px solid var(--gold-border); border-bottom: 1px solid var(--gold-border); }
 .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: clamp(1rem,3vw,1.5rem); }
 .contact-item {
-  display: flex; align-items: flex-start; gap: 1rem;
+  display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1rem;
   background: var(--dark3); border: 1px solid var(--border);
   border-radius: var(--radius); padding: 1.4rem 1.5rem;
   transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
