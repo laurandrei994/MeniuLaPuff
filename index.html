@@ -4,44 +4,109 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>La Puff Delivery – Proaspăt. Rapid. Delicios.</title>
+<meta name="description" content="La Puff Delivery — panini, pizza, shaorma, paste, salate, boxuri și cafea, gătite proaspăt și livrate rapid. Comandă la 0724 747 359.">
+<meta name="theme-color" content="#0B0908">
+<meta property="og:title" content="La Puff Delivery">
+<meta property="og:description" content="Proaspăt. Rapid. Delicios. Livrăm direct la tine acasă sau ridici din sediu.">
+<meta property="og:image" content="images/hero/hero-main.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="La Puff">
+<link rel="preload" as="image" href="images/hero/hero-main.jpg" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "La Puff Delivery",
+  "image": "images/hero/hero-main.jpg",
+  "telephone": "+40724747359",
+  "servesCuisine": ["Pizza", "Panini", "Shaorma", "Paste", "Salate"],
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Strada Alexandru Ioan Cuza, Bloc A9, Scara A",
+    "addressLocality": "Urziceni",
+    "addressRegion": "Ialomița",
+    "addressCountry": "RO"
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "09:00", "closes": "14:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "18:00", "closes": "22:00" }
+  ],
+  "sameAs": [
+    "https://www.facebook.com/profile.php?id=61572019274112",
+    "https://www.tiktok.com/@la.puff.delivery"
+  ]
+}
+</script>
 </head>
 <body>
 
 <!-- NAV -->
-<nav>
+<nav id="nav">
   <a class="nav-logo" href="#"><span>La</span> Puff</a>
   <ul class="nav-links">
-    <li><a href="#menu">Meniu</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#menu" data-nav="menu">Meniu</a></li>
+    <li><a href="#contact" data-nav="contact">Contact</a></li>
+    <li class="nav-social">
+      <a href="https://www.facebook.com/profile.php?id=61572019274112" target="_blank" rel="noopener" aria-label="La Puff Delivery pe Facebook">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.89h2.78l-.44 2.91h-2.34V22c4.78-.76 8.44-4.92 8.44-9.94Z"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@la.puff.delivery" target="_blank" rel="noopener" aria-label="La Puff Delivery pe TikTok">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M16.6 2h-3.2v13.9a2.9 2.9 0 1 1-2.05-2.77V9.9a6.1 6.1 0 1 0 5.25 6.04V8.36a7.5 7.5 0 0 0 4.4 1.4V6.53a4.3 4.3 0 0 1-4.4-4.53Z"/></svg>
+      </a>
+    </li>
     <li><a href="tel:0724747359" class="nav-cta">☎ Comandă Acum</a></li>
   </ul>
-  <div class="hamburger" id="hbg" onclick="toggleMenu()" aria-label="Meniu">
+  <button type="button" class="hamburger" id="hbg" onclick="toggleMenu()" aria-label="Deschide meniul de navigare" aria-expanded="false" aria-controls="mob-menu">
     <span></span><span></span><span></span>
-  </div>
+  </button>
 </nav>
 <div class="mobile-menu" id="mob-menu">
   <a href="#menu" onclick="closeMenu()">Meniu</a>
   <a href="#contact" onclick="closeMenu()">Contact</a>
-  <a href="tel:0724747359">☎ 0724 747 359</a>
+  <a href="tel:0724747359" class="mobile-cta">☎ 0724 747 359</a>
+  <div class="mobile-social">
+    <a href="https://www.facebook.com/profile.php?id=61572019274112" target="_blank" rel="noopener" aria-label="La Puff Delivery pe Facebook">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.89h2.78l-.44 2.91h-2.34V22c4.78-.76 8.44-4.92 8.44-9.94Z"/></svg>
+    </a>
+    <a href="https://www.tiktok.com/@la.puff.delivery" target="_blank" rel="noopener" aria-label="La Puff Delivery pe TikTok">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M16.6 2h-3.2v13.9a2.9 2.9 0 1 1-2.05-2.77V9.9a6.1 6.1 0 1 0 5.25 6.04V8.36a7.5 7.5 0 0 0 4.4 1.4V6.53a4.3 4.3 0 0 1-4.4-4.53Z"/></svg>
+    </a>
+  </div>
 </div>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-pattern"></div>
+<section class="hero" id="hero">
+  <div class="hero-media" aria-hidden="true">
+    <img class="hero-img" src="images/hero/hero-main.jpg" alt="" fetchpriority="high" decoding="async">
+    <div class="hero-scrim"></div>
+  </div>
   <div class="hero-content">
     <div class="hero-badge"><span class="flame">🔥</span> Gustul care te face să revii</div>
     <h1>La <em>Puff</em> Delivery</h1>
     <p class="hero-sub">Proaspăt. Rapid. Delicios. — Livrăm direct la tine acasă sau ridici din sediu.</p>
     <div class="hero-btns">
       <a href="#menu" class="btn-primary">Vezi Meniul</a>
-      <a href="tel:0724747359" class="btn-outline">☎ 0724 747 359 </a>
+      <a href="tel:0724747359" class="btn-outline">☎ 0724 747 359</a>
     </div>
     <div class="hero-stats">
-      <div class="stat-item"><div class="stat-val">9:00 – 14:00</div><div class="stat-lbl">Prânz</div></div>
+      <div class="stat-item">
+        <div class="stat-val"><span class="status-dot" id="status-dot"></span><span id="status-text">Verificăm programul…</span></div>
+        <div class="stat-lbl">Acum</div>
+      </div>
       <div class="stat-sep"></div>
-      <div class="stat-item"><div class="stat-val">18:00 – 22:00</div><div class="stat-lbl">Seară</div></div>
+      <div class="stat-item"><div class="stat-val">9 – 14</div><div class="stat-lbl">Prânz</div></div>
+      <div class="stat-sep"></div>
+      <div class="stat-item"><div class="stat-val">18 – 22</div><div class="stat-lbl">Seară</div></div>
     </div>
   </div>
   <div class="scroll-hint" aria-hidden="true"><span class="scroll-line"></span></div>
@@ -55,254 +120,309 @@
       <h2 class="section-heading">Meniul <span>Nostru</span></h2>
       <div class="heading-rule"></div>
     </div>
-    <div class="tab-row reveal">
-      <button class="tab-btn active" onclick="showTab('panini',this)">Panini</button>
-      <button class="tab-btn" onclick="showTab('meniuri',this)">Meniuri</button>
-      <button class="tab-btn" onclick="showTab('boxuri',this)">Boxuri</button>
-      <button class="tab-btn" onclick="showTab('pizza',this)">Pizza</button>
-      <button class="tab-btn" onclick="showTab('shaorma',this)">Shaorma</button>
-      <button class="tab-btn" onclick="showTab('paste',this)">Paste</button>
-      <button class="tab-btn" onclick="showTab('salate',this)">Salate</button>
-      <button class="tab-btn" onclick="showTab('cafea',this)">Cafea</button>
-      <button class="tab-btn" onclick="showTab('racoritoare',this)">Răcoritoare</button>
-      <button class="tab-btn" onclick="showTab('extra',this)">Extra</button>
+    <div class="tab-row reveal" role="tablist" aria-label="Categorii meniu">
+      <button type="button" class="tab-btn active" role="tab" aria-selected="true" aria-controls="tab-noutati" onclick="showTab('noutati',this)"><span class="tab-icon">✨</span>Noutăți</button>
+      <button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-panini" onclick="showTab('panini',this)"><span class="tab-icon">🥪</span>Panini</button>
+      <button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-meniuri" onclick="showTab('meniuri',this)"><span class="tab-icon">🍽</span>Meniuri</button>
+      <button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-boxuri" onclick="showTab('boxuri',this)"><span class="tab-icon">🥡</span>Boxuri</button>
+      <button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-pizza" onclick="showTab('pizza',this)"><span class="tab-icon">🍕</span>Pizza</button>
+      <button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-shaorma" onclick="showTab('shaorma',this)"><span class="tab-icon">🌯</span>Shaorma</button>
+      <button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-paste" onclick="showTab('paste',this)"><span class="tab-icon">🍝</span>Paste</button>
+      <button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-salate" onclick="showTab('salate',this)"><span class="tab-icon">🥗</span>Salate</button>
+      <button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-cafea" onclick="showTab('cafea',this)"><span class="tab-icon">☕</span>Cafea</button>
+      <button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-racoritoare" onclick="showTab('racoritoare',this)"><span class="tab-icon">🥤</span>Răcoritoare</button>
+      <button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-extra" onclick="showTab('extra',this)"><span class="tab-icon">➕</span>Extra</button>
+    </div>
+
+    <!-- NOUTATI -->
+    <div class="menu-panel active" id="tab-noutati" role="tabpanel">
+      <div class="menu-grid">
+        <div class="menu-card">
+          <div class="card-img-wrap"><span class="card-badge">Nou</span><img class="card-img" src="./images/panini/panini-pollo.jpg" alt="Mini Panini Crispy" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Mini Panini Crispy</div><div class="card-price">26 lei</div><p class="card-desc">Lipie, crispy pui 75g, cartofi prăjiți 50g, castraveți murați 15g, salată iceberg 15g, ceapă crispy 10g, parmezan 5g, sos cheddar 15g, sos maioneză 15g, verdeață</p></div>
+        </div>
+        <div class="menu-card">
+          <div class="card-img-wrap"><span class="card-badge">Nou</span><img class="card-img" src="./images/panini/panini-pollo.jpg" alt="Mini Panini El Pollo" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Mini Panini El Pollo</div><div class="card-price">26 lei</div><p class="card-desc">Lipie, șnițel pui panko 75g, cartofi prăjiți 50g, mozzarella 25g, salată iceberg 15g, roșii 15g, sos napoli 15g, sosul casei 15g, verdeață</p></div>
+        </div>
+        <div class="menu-card">
+          <div class="card-img-wrap"><span class="card-badge">Nou</span><img class="card-img" src="./images/panini/panini-fresh.jpg" alt="Mini Panini Fresh" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Mini Panini Fresh</div><div class="card-price">20 lei</div><p class="card-desc">Lipie, șuncă praga 75g, mozzarella 25g, castraveți proaspeți 15g, roșii 15g, salată iceberg 15g, parmezan 5g, cremă de brânză 25g</p></div>
+        </div>
+        <div class="menu-card">
+          <div class="card-img-wrap"><span class="card-badge">Nou</span><img class="card-img" src="./images/panini/panini-porc.jpg" alt="Mini Panini El Porc" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Mini Panini El Porc</div><div class="card-price">26 lei</div><p class="card-desc">Lipie, șnițel porc panko 75g, cartofi prăjiți 50g, salată de varză 15g, roșii 15g, sos usturoi 15g, sosul casei 15g, parmezan 5g, verdeață</p></div>
+        </div>
+        <div class="menu-card">
+          <div class="card-img-wrap"><span class="card-badge">Nou</span><img class="card-img" src="./images/pizza/pizza-quattro-formaggi.jpg" alt="Pizza Quattro Formaggi" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Pizza Quattro Formaggi</div><div class="card-price">35 lei</div><p class="card-desc">Aluat, mozzarella 100g, gorgonzola 40g, parmezan 30g, cașcaval 30g, sos roșii 30g</p></div>
+        </div>
+        <div class="menu-card">
+          <div class="card-img-wrap"><span class="card-badge">Nou</span><img class="card-img" src="./images/pizza/focaccia-cu-cascaval.jpg" alt="Focaccia cu Cașcaval" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Focaccia cu Cașcaval</div><div class="card-price">15 lei</div><p class="card-desc">Aluat, cașcaval 100g</p></div>
+        </div>
+        <div class="menu-card">
+          <div class="card-img-wrap"><span class="card-badge">Nou</span><img class="card-img" src="./images/shaorma/bagheta-cheesy.jpg" alt="Bagheta Cheesy" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Bagheta Cheesy</div><div class="card-price">35 lei</div><p class="card-desc">Lipie, crispy pui 100g, mozzarella 50g, salată iceberg 30g, roșii 30g, cartofi prăjiți 200g, sos cheddar 50g, ceapă crispy 20g, 2 sosuri la alegere 50g</p></div>
+        </div>
+        <div class="menu-card">
+          <div class="card-img-wrap"><span class="card-badge">Nou</span><img class="card-img" src="./images/meniuri/meniu-5-crispy.jpg" alt="Meniu 5 Crispy" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Meniu 5 Crispy</div><div class="card-price">26 lei</div><p class="card-desc">5 bucăți crispy pui, cartofi prăjiți 100g, sosul casei 50g</p></div>
+        </div>
+      </div>
     </div>
 
     <!-- PANINI -->
-    <div class="menu-panel active" id="tab-panini">
+    <div class="menu-panel" id="tab-panini" role="tabpanel">
       <div class="menu-grid">
         <div class="menu-card">
-          <div class="card-img-wrap"><img class="card-img" src="./images/panini/panini-pollo.jpg" alt="Panini Crispy" loading="lazy"></div>
-          <div class="card-body"><div class="card-name">Panini Crispy</div><p class="card-desc">Lipie, crispy pui 150g, cartofi prăjiți 100g, castraveți murați 30g, salată iceberg 30g, ceapă crispy 20g, parmezan 10g, sos cheddar 30g, sos maioneză 30g, verdeață</p><div class="card-price">36 lei</div></div>
+          <div class="card-img-wrap"><img class="card-img" src="./images/panini/panini-pollo.jpg" alt="Panini Crispy" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Panini Crispy</div><div class="card-price">36 lei</div><p class="card-desc">Lipie, crispy pui 150g, cartofi prăjiți 100g, castraveți murați 30g, salată iceberg 30g, ceapă crispy 20g, parmezan 10g, sos cheddar 30g, sos maioneză 30g, verdeață</p><div class="card-variant"><div class="variant-head"><div class="card-name">Mini Panini Crispy</div><div class="card-price">26 lei</div></div><p class="variant-desc">Lipie, crispy pui 75g, cartofi prăjiți 50g, castraveți murați 15g, salată iceberg 15g, ceapă crispy 10g, parmezan 5g, sos cheddar 15g, sos maioneză 15g, verdeață</p></div></div>
         </div>
         <div class="menu-card">
-          <div class="card-img-wrap"><img class="card-img" src="./images/panini/panini-pollo.jpg" alt="Panini El Pollo" loading="lazy"></div>
-          <div class="card-body"><div class="card-name">Panini El Pollo</div><p class="card-desc">Lipie, șnițel pui panko 150g, cartofi prăjiți 100g, mozzarella 50g, salată iceberg 30g, roșii 30g, sos napoli 30g, sosul casei 30g, verdeață</p><div class="card-price">36 lei</div></div>
+          <div class="card-img-wrap"><img class="card-img" src="./images/panini/panini-pollo.jpg" alt="Panini El Pollo" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Panini El Pollo</div><div class="card-price">36 lei</div><p class="card-desc">Lipie, șnițel pui panko 150g, cartofi prăjiți 100g, mozzarella 50g, salată iceberg 30g, roșii 30g, sos napoli 30g, sosul casei 30g, verdeață</p><div class="card-variant"><div class="variant-head"><div class="card-name">Mini Panini El Pollo</div><div class="card-price">26 lei</div></div><p class="variant-desc">Lipie, șnițel pui panko 75g, cartofi prăjiți 50g, mozzarella 25g, salată iceberg 15g, roșii 15g, sos napoli 15g, sosul casei 15g, verdeață</p></div></div>
         </div>
         <div class="menu-card">
-          <div class="card-img-wrap"><img class="card-img" src="./images/panini/panini-fresh.jpg" alt="Panini Fresh" loading="lazy"></div>
-          <div class="card-body"><div class="card-name">Panini Fresh</div><p class="card-desc">Lipie, șuncă praga 150g, mozzarella 50g, castraveți proaspeți 30g, roșii 30g, salată iceberg 30g, parmezan 10g, cremă de brânză 50g</p><div class="card-price">28 lei</div></div>
+          <div class="card-img-wrap"><img class="card-img" src="./images/panini/panini-fresh.jpg" alt="Panini Fresh" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Panini Fresh</div><div class="card-price">28 lei</div><p class="card-desc">Lipie, șuncă praga 150g, mozzarella 50g, castraveți proaspeți 30g, roșii 30g, salată iceberg 30g, parmezan 10g, cremă de brânză 50g</p><div class="card-variant"><div class="variant-head"><div class="card-name">Mini Panini Fresh</div><div class="card-price">20 lei</div></div><p class="variant-desc">Lipie, șuncă praga 75g, mozzarella 25g, castraveți proaspeți 15g, roșii 15g, salată iceberg 15g, parmezan 5g, cremă de brânză 25g</p></div></div>
         </div>
         <div class="menu-card">
-          <div class="card-img-wrap"><img class="card-img" src="./images/panini/panini-porc.jpg" alt="Panini El Porc" loading="lazy"></div>
-          <div class="card-body"><div class="card-name">Panini El Porc</div><p class="card-desc">Lipie, șnițel porc panko 150g, cartofi prăjiți 100g, salată de varză 30g, roșii 30g, sos usturoi 30g, sosul casei 30g, parmezan 10g, verdeață</p><div class="card-price">36 lei</div></div>
+          <div class="card-img-wrap"><img class="card-img" src="./images/panini/panini-porc.jpg" alt="Panini El Porc" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Panini El Porc</div><div class="card-price">36 lei</div><p class="card-desc">Lipie, șnițel porc panko 150g, cartofi prăjiți 100g, salată de varză 30g, roșii 30g, sos usturoi 30g, sosul casei 30g, parmezan 10g, verdeață</p><div class="card-variant"><div class="variant-head"><div class="card-name">Mini Panini El Porc</div><div class="card-price">26 lei</div></div><p class="variant-desc">Lipie, șnițel porc panko 75g, cartofi prăjiți 50g, salată de varză 15g, roșii 15g, sos usturoi 15g, sosul casei 15g, parmezan 5g, verdeață</p></div></div>
         </div>
       </div>
     </div>
 
         <!-- MENIURI -->
-    <div class="menu-panel" id="tab-meniuri">
+    <div class="menu-panel" id="tab-meniuri" role="tabpanel">
       <div class="menu-grid">
         <div class="menu-card">
-          <div class="card-img-wrap"><img class="card-img" src="./images/meniuri/gratinat.jpg" alt="Șnițel Gratinat" loading="lazy"></div>
-          <div class="card-body"><div class="card-name">Șnițel Pui/Porc Gratinat</div><p class="card-desc">Șnițel pui/porc panko 200g, cartofi prăjiți 200g, sos napoli 50g, mozzarella 50g, cartofi cu parmezan și usturoi 200g, sosul casei 50g</p><div class="card-price">39 lei</div></div>
+          <div class="card-img-wrap"><img class="card-img" src="./images/meniuri/gratinat.jpg" alt="Șnițel Gratinat" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Șnițel Pui/Porc Gratinat</div><div class="card-price">39 lei</div><p class="card-desc">Șnițel pui/porc panko 200g, cartofi prăjiți 200g, sos napoli 50g, mozzarella 50g, cartofi cu parmezan și usturoi 200g, sosul casei 50g</p></div>
         </div>
         <div class="menu-card">
-          <div class="card-img-wrap"><img class="card-img" src="./images/meniuri/snitel-panko.jpg" alt="Șnițel Pui/Porc" loading="lazy"></div>
-          <div class="card-body"><div class="card-name">Șnițel Pui/Porc</div><p class="card-desc">Șnițel pui/porc panko 200g, cartofi prăjiți 200g, sosul casei 50g</p><div class="card-price">37 lei</div></div>
+          <div class="card-img-wrap"><img class="card-img" src="./images/meniuri/snitel-panko.jpg" alt="Șnițel Pui/Porc" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Șnițel Pui/Porc</div><div class="card-price">37 lei</div><p class="card-desc">Șnițel pui/porc panko 200g, cartofi prăjiți 200g, sosul casei 50g</p></div>
         </div>
         <div class="menu-card">
-          <div class="card-img-wrap"><img class="card-img" src="./images/meniuri/crispy.jpg" alt="Crispy Panko" loading="lazy"></div>
-          <div class="card-body"><div class="card-name">Crispy Panko</div><p class="card-desc">Crispy pui panko 200g, cartofi prăjiți 200g, sosul casei 50g</p><div class="card-price">37 lei</div></div>
+          <div class="card-img-wrap"><img class="card-img" src="./images/meniuri/crispy.jpg" alt="Crispy Panko" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Crispy Panko</div><div class="card-price">37 lei</div><p class="card-desc">Crispy pui panko 200g, cartofi prăjiți 200g, sosul casei 50g</p></div>
+        </div>
+        <div class="menu-card">
+          <div class="card-img-wrap"><img class="card-img" src="./images/meniuri/meniu-5-crispy.jpg" alt="Meniu 5 Crispy" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Meniu 5 Crispy</div><div class="card-price">26 lei</div><p class="card-desc">5 bucăți crispy pui, cartofi prăjiți 100g, sosul casei 50g</p></div>
         </div>
       </div>
     </div>
 
         <!-- BOXURI -->
-    <div class="menu-panel" id="tab-boxuri">
+    <div class="menu-panel" id="tab-boxuri" role="tabpanel">
       <div class="menu-grid">
         <div class="menu-card">
-          <div class="card-img-wrap"><img class="card-img" src="./images/box/box.jpg" alt="Box Crispy" loading="lazy"></div>
-          <div class="card-body"><div class="card-name">Box Crispy</div><p class="card-desc">Crispy pui 100g, cartofi prăjiți 100g, salată iceberg 30g, sosul casei 50g, sos samurai 50g, ceapă crispy 20g</p><div class="card-price">24 lei</div></div>
+          <div class="card-img-wrap"><img class="card-img" src="./images/box/box.jpg" alt="Box Crispy" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Box Crispy</div><div class="card-price">24 lei</div><p class="card-desc">Crispy pui 100g, cartofi prăjiți 100g, salată iceberg 30g, sosul casei 50g, sos samurai 50g, ceapă crispy 20g</p></div>
         </div>
         <div class="menu-card">
-          <div class="card-img-wrap"><img class="card-img" src="./images/box/box.jpg" alt="Box Cârnați" loading="lazy"></div>
-          <div class="card-body"><div class="card-name">Box Cârnați</div><p class="card-desc">Cârnați 100g, cartofi prăjiți 100g, sosul la alegere 50g</p><div class="card-price">22 lei</div></div>
+          <div class="card-img-wrap"><img class="card-img" src="./images/box/box.jpg" alt="Box Cârnați" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Box Cârnați</div><div class="card-price">22 lei</div><p class="card-desc">Cârnați 100g, cartofi prăjiți 100g, sosul la alegere 50g</p></div>
         </div>
       </div>
     </div>
 
     <!-- PIZZA -->
-    <div class="menu-panel" id="tab-pizza">
+    <div class="menu-panel" id="tab-pizza" role="tabpanel">
       <div class="menu-grid">
         <div class="menu-card">
-          <div class="card-img-wrap"><img class="card-img" src="./images/pizza/pizza-casei.jpg" alt="Pizza Casei" loading="lazy"></div>
-          <div class="card-body"><div class="card-name">Pizza Casei</div><p class="card-desc">Aluat, bacon 30g, șuncă praga 30g, cârnați 30g, mozzarella 100g, ciuperci proaspete 30g, ardei gras roșu 30g, măsline 30g, sos roșii 30g</p><div class="card-price">35 lei</div></div>
+          <div class="card-img-wrap"><img class="card-img" src="./images/pizza/pizza-casei.jpg" alt="Pizza Casei" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Pizza Casei</div><div class="card-price">35 lei</div><p class="card-desc">Aluat, bacon 30g, șuncă praga 30g, cârnați 30g, mozzarella 100g, ciuperci proaspete 30g, ardei gras roșu 30g, măsline 30g, sos roșii 30g</p></div>
         </div>
         <div class="menu-card">
-          <div class="card-img-wrap"><img class="card-img" src="./images/pizza/pizza-qs.jpg" alt="Pizza Quattro Stagioni" loading="lazy"></div>
-          <div class="card-body"><div class="card-name">Pizza Quattro Stagioni</div><p class="card-desc">Aluat, salam 30g, șuncă praga 30g, mozzarella 100g, ciuperci 30g, măsline 30g, sos roșii 30g</p><div class="card-price">33 lei</div></div>
+          <div class="card-img-wrap"><img class="card-img" src="./images/pizza/pizza-qs.jpg" alt="Pizza Quattro Stagioni" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Pizza Quattro Stagioni</div><div class="card-price">33 lei</div><p class="card-desc">Aluat, salam 30g, șuncă praga 30g, mozzarella 100g, ciuperci 30g, măsline 30g, sos roșii 30g</p></div>
         </div>
         <div class="menu-card">
-          <div class="card-img-wrap"><img class="card-img" src="./images/pizza/pizza-qc.jpg" alt="Pizza Quattro Carni" loading="lazy"></div>
-          <div class="card-body"><div class="card-name">Pizza Quattro Carni</div><p class="card-desc">Aluat, salam 30g, șuncă praga 30g, bacon 30g, cârnați 30g, mozzarella 100g, sos roșii 30g</p><div class="card-price">35 lei</div></div>
+          <div class="card-img-wrap"><img class="card-img" src="./images/pizza/pizza-qc.jpg" alt="Pizza Quattro Carni" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Pizza Quattro Carni</div><div class="card-price">35 lei</div><p class="card-desc">Aluat, salam 30g, șuncă praga 30g, bacon 30g, cârnați 30g, mozzarella 100g, sos roșii 30g</p></div>
         </div>
         <div class="menu-card">
-          <div class="card-img-wrap"><img class="card-img" src="./images/pizza/pizza-pf.jpg" alt="Pizza Prosciutto e Funghi" loading="lazy"></div>
-          <div class="card-body"><div class="card-name">Pizza Prosciutto e Funghi</div><p class="card-desc">Aluat, șuncă praga 50g, mozzarella 100g, ciuperci 60g, sos roșii 30g</p><div class="card-price">32 lei</div></div>
+          <div class="card-img-wrap"><img class="card-img" src="./images/pizza/pizza-pf.jpg" alt="Pizza Prosciutto e Funghi" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Pizza Prosciutto e Funghi</div><div class="card-price">32 lei</div><p class="card-desc">Aluat, șuncă praga 50g, mozzarella 100g, ciuperci 60g, sos roșii 30g</p></div>
         </div>
         <div class="menu-card">
-          <div class="card-img-wrap"><img class="card-img" src="./images/pizza/pizza-diavola.jpg" alt="Pizza Diavola" loading="lazy"></div>
-          <div class="card-body"><div class="card-name">Pizza Diavola</div><p class="card-desc">Aluat, salam 60g, cârnați 30g,  mozzarella 100g, ardei iute 20g, sos roșii 30g</p><div class="card-price">33 lei</div></div>
+          <div class="card-img-wrap"><img class="card-img" src="./images/pizza/pizza-diavola.jpg" alt="Pizza Diavola" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Pizza Diavola</div><div class="card-price">33 lei</div><p class="card-desc">Aluat, salam 60g, cârnați 30g, mozzarella 100g, ardei iute 20g, sos roșii 30g</p></div>
+        </div>
+        <div class="menu-card">
+          <div class="card-img-wrap"><img class="card-img" src="./images/pizza/pizza-quattro-formaggi.jpg" alt="Pizza Quattro Formaggi" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Pizza Quattro Formaggi</div><div class="card-price">35 lei</div><p class="card-desc">Aluat, mozzarella 100g, gorgonzola 40g, parmezan 30g, cașcaval 30g, sos roșii 30g</p></div>
+        </div>
+        <div class="menu-card">
+          <div class="card-img-wrap"><img class="card-img" src="./images/pizza/focaccia-cu-cascaval.jpg" alt="Focaccia cu Cașcaval" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Focaccia cu Cașcaval</div><div class="card-price">15 lei</div><p class="card-desc">Aluat, cașcaval 100g</p></div>
         </div>
       </div>
     </div>
 
     <!-- SHAORMA -->
-    <div class="menu-panel" id="tab-shaorma">
+    <div class="menu-panel" id="tab-shaorma" role="tabpanel">
       <div class="menu-grid">
         <div class="menu-card">
-          <div class="card-img-wrap"><img class="card-img" src="./images/shaorma/crispy.jpg" alt="Shaorma Crispy" loading="lazy"></div>
-          <div class="card-body"><div class="card-name">Shaorma Crispy</div><p class="card-desc">Lipie, crispy pui 100g, cartofi prăjiți 100g, salată iceberg 30g, salată de varză 30g, castraveți murați 30g, mozzarella 30g, 2 sosuri la alegere 50g</p><div class="card-price">30 lei</div></div>
+          <div class="card-img-wrap"><img class="card-img" src="./images/shaorma/crispy.jpg" alt="Shaorma Crispy" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Shaorma Crispy</div><div class="card-price">30 lei</div><p class="card-desc">Lipie, crispy pui 100g, cartofi prăjiți 100g, salată iceberg 30g, salată de varză 30g, castraveți murați 30g, mozzarella 30g, 2 sosuri la alegere 50g</p></div>
         </div>
         <div class="menu-card">
-          <div class="card-img-wrap"><img class="card-img" src="./images/shaorma/dimineata.jpeg" alt="Shaorma Crispy" loading="lazy"></div>
-          <div class="card-body"><div class="card-name">Bagheta cu șuncă și cașcaval</div><p class="card-desc">Lipie, șuncă praga 50g, cașcaval 50g</p><div class="card-price">16 lei</div></div>
+          <div class="card-img-wrap"><img class="card-img" src="./images/shaorma/dimineata.jpeg" alt="Bagheta cu șuncă și cașcaval" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Bagheta cu șuncă și cașcaval</div><div class="card-price">16 lei</div><p class="card-desc">Lipie, șuncă praga 50g, cașcaval 50g</p></div>
+        </div>
+        <div class="menu-card">
+          <div class="card-img-wrap"><img class="card-img" src="./images/shaorma/bagheta-cheesy.jpg" alt="Bagheta Cheesy" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Bagheta Cheesy</div><div class="card-price">35 lei</div><p class="card-desc">Lipie, crispy pui 100g, mozzarella 50g, salată iceberg 30g, roșii 30g, cartofi prăjiți 200g, sos cheddar 50g, ceapă crispy 20g, 2 sosuri la alegere 50g</p></div>
         </div>
       </div>
     </div>
 
     <!-- PASTE -->
-    <div class="menu-panel" id="tab-paste">
+    <div class="menu-panel" id="tab-paste" role="tabpanel">
       <div class="menu-grid">
         <div class="menu-card">
-          <div class="card-img-wrap"><img class="card-img" src="https://images.unsplash.com/photo-1612874742237-6526221588e3?w=600&q=80" alt="Paste Carbonara" loading="lazy"></div>
-          <div class="card-body"><div class="card-name">Paste Carbonara</div><p class="card-desc">Spaghete/penne 200g, bacon 50g, smântână lichidă 100g, ou, parmezan 30g</p><div class="card-price">33 lei</div></div>
+          <div class="card-img-wrap"><img class="card-img" src="https://images.unsplash.com/photo-1612874742237-6526221588e3?w=600&q=80" alt="Paste Carbonara" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Paste Carbonara</div><div class="card-price">33 lei</div><p class="card-desc">Spaghete/penne 200g, bacon 50g, smântână lichidă 100g, ou, parmezan 30g</p></div>
         </div>
         <div class="menu-card">
-          <div class="card-img-wrap"><img class="card-img" src="./images/paste/paste-pollo.jpg" alt="Paste Pollo" loading="lazy"></div>
-          <div class="card-body"><div class="card-name">Paste Pollo</div><p class="card-desc">Spaghete/penne 200g, piept de pui 100g, sos napoli 100g, parmezan 30g</p><div class="card-price">35 lei</div></div>
+          <div class="card-img-wrap"><img class="card-img" src="./images/paste/paste-pollo.jpg" alt="Paste Pollo" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Paste Pollo</div><div class="card-price">35 lei</div><p class="card-desc">Spaghete/penne 200g, piept de pui 100g, sos napoli 100g, parmezan 30g</p></div>
         </div>
         <div class="menu-card">
-          <div class="card-img-wrap"><img class="card-img" src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600&q=80" alt="Paste Milaneze" loading="lazy"></div>
-          <div class="card-body"><div class="card-name">Paste Milaneze</div><p class="card-desc">Spaghete/penne 200g, șuncă praga 50g, ciuperci 50g, sos napoli 100g, parmezan 30g</p><div class="card-price">33 lei</div></div>
+          <div class="card-img-wrap"><img class="card-img" src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600&q=80" alt="Paste Milaneze" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Paste Milaneze</div><div class="card-price">33 lei</div><p class="card-desc">Spaghete/penne 200g, șuncă praga 50g, ciuperci 50g, sos napoli 100g, parmezan 30g</p></div>
         </div>
       </div>
     </div>
 
     <!-- SALATE -->
-    <div class="menu-panel" id="tab-salate">
+    <div class="menu-panel" id="tab-salate" role="tabpanel">
       <div class="menu-grid">
         <div class="menu-card">
-          <div class="card-img-wrap"><img class="card-img" src="./images/salate/crispy.jpg" alt="Salată Crispy" loading="lazy"></div>
-          <div class="card-body"><div class="card-name">Salată Crispy</div><p class="card-desc">Salată iceberg 100g, crispy pui 100g, roșii 100g, ciuperci proaspete 30g, morcov ras 30g, măsline 30g, sosul casei 50g</p><div class="card-price">34 lei</div></div>
+          <div class="card-img-wrap"><img class="card-img" src="./images/salate/crispy.jpg" alt="Salată Crispy" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Salată Crispy</div><div class="card-price">34 lei</div><p class="card-desc">Salată iceberg 100g, crispy pui 100g, roșii 100g, ciuperci proaspete 30g, morcov ras 30g, măsline 30g, sosul casei 50g</p></div>
         </div>
         <div class="menu-card">
-          <div class="card-img-wrap"><img class="card-img" src="./images/salate/bulgareasca.jpg" alt="Salată Bulgărească" loading="lazy"></div>
-          <div class="card-body"><div class="card-name">Salată Bulgărească</div><p class="card-desc">Salată iceberg 100g, șuncă praga 50g, telemea 50g, ou, roșii 100g, castraveți proaspeți 50g, măsline 30g, ceapă 20g</p><div class="card-price">25 lei</div></div>
+          <div class="card-img-wrap"><img class="card-img" src="./images/salate/bulgareasca.jpg" alt="Salată Bulgărească" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Salată Bulgărească</div><div class="card-price">25 lei</div><p class="card-desc">Salată iceberg 100g, șuncă praga 50g, telemea 50g, ou, roșii 100g, castraveți proaspeți 50g, măsline 30g, ceapă 20g</p></div>
         </div>
         <div class="menu-card">
-          <div class="card-img-wrap"><img class="card-img" src="./images/salate/caprese.jpg" alt="Salată Caprese" loading="lazy"></div>
-          <div class="card-body"><div class="card-name">Salată Caprese</div><p class="card-desc">Roșii 100g, mozzarella 100g, oregano, ulei de măsline</p><div class="card-price">24 lei</div></div>
+          <div class="card-img-wrap"><img class="card-img" src="./images/salate/caprese.jpg" alt="Salată Caprese" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Salată Caprese</div><div class="card-price">24 lei</div><p class="card-desc">Roșii 100g, mozzarella 100g, oregano, ulei de măsline</p></div>
         </div>
         <div class="menu-card">
-          <div class="card-img-wrap"><img class="card-img" src="./images/salate/varza.jpg" alt="Salată de Varză" loading="lazy"></div>
-          <div class="card-body"><div class="card-name">Salată de Varză</div><p class="card-desc">Varză albă 200g, ulei, sare, piper, oțet</p><div class="card-price">10 lei</div></div>
+          <div class="card-img-wrap"><img class="card-img" src="./images/salate/varza.jpg" alt="Salată de Varză" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Salată de Varză</div><div class="card-price">10 lei</div><p class="card-desc">Varză albă 200g, ulei, sare, piper, oțet</p></div>
         </div>
         <div class="menu-card">
-          <div class="card-img-wrap"><img class="card-img" src="./images/salate/salata-de-vara.webp" alt="Salată de Vară" loading="lazy"></div>
-          <div class="card-body"><div class="card-name">Salată de Vară</div><p class="card-desc">Roșii 100g, castraveți proaspeți 50g, ardei gras 50g</p><div class="card-price">11 lei</div></div>
+          <div class="card-img-wrap"><img class="card-img" src="./images/salate/salata-de-vara.webp" alt="Salată de Vară" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Salată de Vară</div><div class="card-price">11 lei</div><p class="card-desc">Roșii 100g, castraveți proaspeți 50g, ardei gras 50g</p></div>
         </div>
         <div class="menu-card">
-          <div class="card-img-wrap"><img class="card-img" src="./images/salate/castraveti-murati.jpg" alt="Salată de Castraveți Murați" loading="lazy"></div>
-          <div class="card-body"><div class="card-name">Salată de Castraveți Murați</div><p class="card-desc">Castraveți murați 200g</p><div class="card-price">10 lei</div></div>
+          <div class="card-img-wrap"><img class="card-img" src="./images/salate/castraveti-murati.jpg" alt="Salată de Castraveți Murați" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Salată de Castraveți Murați</div><div class="card-price">10 lei</div><p class="card-desc">Castraveți murați 200g</p></div>
         </div>
       </div>
     </div>
 
     <!-- CAFEA -->
-    <div class="menu-panel" id="tab-cafea">
+    <div class="menu-panel" id="tab-cafea" role="tabpanel">
       <div class="menu-grid">
         <div class="menu-card">
-          <div class="card-img-wrap"><img class="card-img" src="./images/cafea/espresso.avif" alt="Espresso" loading="lazy"></div>
-          <div class="card-body"><div class="card-name">Espresso</div><p class="card-desc">Cafea espresso simplă, preparată proaspăt</p><div class="card-price">6 lei</div></div>
+          <div class="card-img-wrap"><img class="card-img" src="./images/cafea/espresso.avif" alt="Espresso" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Espresso</div><div class="card-price">6 lei</div><p class="card-desc">Cafea espresso simplă, preparată proaspăt</p></div>
         </div>
         <div class="menu-card">
-          <div class="card-img-wrap"><img class="card-img" src="./images/cafea/cappuccino.webp" alt="Cappuccino" loading="lazy"></div>
-          <div class="card-body"><div class="card-name">Cappuccino</div><p class="card-desc">Espresso cu lapte spumat și cremă fină de lapte</p><div class="card-price">10 lei</div></div>
+          <div class="card-img-wrap"><img class="card-img" src="./images/cafea/cappuccino.webp" alt="Cappuccino" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Cappuccino</div><div class="card-price">10 lei</div><p class="card-desc">Espresso cu lapte spumat și cremă fină de lapte</p></div>
         </div>
         <div class="menu-card">
-          <div class="card-img-wrap"><img class="card-img" src="./images/cafea/latte.avif" alt="Latte" loading="lazy"></div>
-          <div class="card-body"><div class="card-name">Caffè Latte</div><p class="card-desc">Espresso cu lapte cald și un strat subțire de spumă</p><div class="card-price">10 lei</div></div>
+          <div class="card-img-wrap"><img class="card-img" src="./images/cafea/latte.avif" alt="Latte" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Caffè Latte</div><div class="card-price">10 lei</div><p class="card-desc">Espresso cu lapte cald și un strat subțire de spumă</p></div>
         </div>
         <div class="menu-card">
-          <div class="card-img-wrap"><img class="card-img" src="./images/cafea/frappe.jpg" alt="Frappe" loading="lazy"></div>
-          <div class="card-body"><div class="card-name">Frappè</div><p class="card-desc">Espresso cu lapte rece și frișcă</p><div class="card-price">12 lei</div></div>
+          <div class="card-img-wrap"><img class="card-img" src="./images/cafea/frappe.jpg" alt="Frappe" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Frappè</div><div class="card-price">12 lei</div><p class="card-desc">Espresso cu lapte rece și frișcă</p></div>
         </div>
       </div>
     </div>
 
     <!-- RACORITOARE -->
-    <div class="menu-panel" id="tab-racoritoare">
+    <div class="menu-panel" id="tab-racoritoare" role="tabpanel">
       <div class="menu-grid">
         <div class="menu-card">
-          <div class="card-img-wrap"><img class="card-img" src="./images/racoritoare/apa-plata.jpg" alt="Apă Minerală" loading="lazy"></div>
-          <div class="card-body"><div class="card-name">Apă Minerală/Plată</div><p class="card-desc">Sticlă 500ml, plată sau carbogazoasă</p><div class="card-price">7 lei</div></div>
+          <div class="card-img-wrap"><img class="card-img" src="./images/racoritoare/apa-plata.jpg" alt="Apă Minerală" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Apă Minerală/Plată</div><div class="card-price">7 lei</div><p class="card-desc">Sticlă 500ml, plată sau carbogazoasă</p></div>
         </div>
         <div class="menu-card">
-          <div class="card-img-wrap"><img class="card-img" src="./images/racoritoare/sucuri.png" alt="Coca-Cola" loading="lazy"></div>
-          <div class="card-body"><div class="card-name">Coca-Cola/Fanta/Sprite</div><p class="card-desc">Doză 330ml</p><div class="card-price">8 lei</div></div>
+          <div class="card-img-wrap"><img class="card-img" src="./images/racoritoare/sucuri.jpg" alt="Coca-Cola" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Coca-Cola/Fanta/Sprite</div><div class="card-price">8 lei</div><p class="card-desc">Doză 330ml</p></div>
         </div>
         <div class="menu-card">
-          <div class="card-img-wrap"><img class="card-img" src="./images/racoritoare/nestea.avif" alt="Nestea" loading="lazy"></div>
-          <div class="card-body"><div class="card-name">Nestea</div><p class="card-desc">Sticlă, 500ml</p><div class="card-price">9 lei</div></div>
+          <div class="card-img-wrap"><img class="card-img" src="./images/racoritoare/nestea.avif" alt="Nestea" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Nestea</div><div class="card-price">9 lei</div><p class="card-desc">Sticlă, 500ml</p></div>
         </div>
         <div class="menu-card">
-          <div class="card-img-wrap"><img class="card-img" src="./images/racoritoare/limonada.jpg" alt="Limonadă" loading="lazy"></div>
-          <div class="card-body"><div class="card-name">Limonadă</div><p class="card-desc">Lămâie, mentă, apă, 400ml</p><div class="card-price">10 lei</div></div>
+          <div class="card-img-wrap"><img class="card-img" src="./images/racoritoare/limonada.jpg" alt="Limonadă" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Limonadă</div><div class="card-price">10 lei</div><p class="card-desc">Lămâie, mentă, apă, 400ml</p></div>
         </div>
         <div class="menu-card">
-          <div class="card-img-wrap"><img class="card-img" src="./images/racoritoare/limonada-arome.jpeg" alt="Limonadă cu arome" loading="lazy"></div>
-          <div class="card-body"><div class="card-name">Limonadă cu arome (mango, fructul pasiunii, căpșuni)</div><p class="card-desc">Lămâie, mentă, apă, sirop de fructe, 400ml</p><div class="card-price">12 lei</div></div>
+          <div class="card-img-wrap"><img class="card-img" src="./images/racoritoare/limonada-arome.jpeg" alt="Limonadă cu arome" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Limonadă cu arome (mango, fructul pasiunii, căpșuni)</div><div class="card-price">12 lei</div><p class="card-desc">Lămâie, mentă, apă, sirop de fructe, 400ml</p></div>
         </div>
       </div>
     </div>
 
     <!-- EXTRA -->
-    <div class="menu-panel" id="tab-extra">
+    <div class="menu-panel" id="tab-extra" role="tabpanel">
       <p class="section-eyebrow">Garnituri</p>
       <div class="menu-grid">
         <div class="menu-card">
-          <div class="card-img-wrap"><img class="card-img" src="./images/extra/garnituri/prajiti.jpg" alt="Cartofi Prăjiți" loading="lazy"></div>
-          <div class="card-body"><div class="card-name">Cartofi Prăjiți</div><p class="card-desc">cartofi prăjiți 200g</p><div class="card-price">10 lei</div></div>
+          <div class="card-img-wrap"><img class="card-img" src="./images/extra/garnituri/prajiti.jpg" alt="Cartofi Prăjiți" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Cartofi Prăjiți</div><div class="card-price">10 lei</div><p class="card-desc">cartofi prăjiți 200g</p></div>
         </div>
         <div class="menu-card">
-          <div class="card-img-wrap"><img class="card-img" src="./images/extra/garnituri/cheddar.jpg" alt="Cartofi Prăjiți cheddar" loading="lazy"></div>
-          <div class="card-body"><div class="card-name">Cartofi Prăjiți cu sos cheddar și ceapă crispy</div><p class="card-desc">cartofi prăjiți 200g, sos cheddar 50g, ceapă crispy 20g</p><div class="card-price">14 lei</div></div>
+          <div class="card-img-wrap"><img class="card-img" src="./images/extra/garnituri/cheddar.jpg" alt="Cartofi Prăjiți cheddar" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Cartofi Prăjiți cu sos cheddar și ceapă crispy</div><div class="card-price">14 lei</div><p class="card-desc">cartofi prăjiți 200g, sos cheddar 50g, ceapă crispy 20g</p></div>
         </div>
         <div class="menu-card">
-          <div class="card-img-wrap"><img class="card-img" src="./images/extra/garnituri/usturoi.jpeg" alt="Cartofi Prăjiți verde" loading="lazy"></div>
-          <div class="card-body"><div class="card-name">Cartofi Prăjiți cu usturoi și verdeață</div><p class="card-desc">cartofi prăjiți 200g, usturoi, verdeață</p><div class="card-price">14 lei</div></div>
+          <div class="card-img-wrap"><img class="card-img" src="./images/extra/garnituri/usturoi.jpeg" alt="Cartofi Prăjiți verde" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Cartofi Prăjiți cu usturoi și verdeață</div><div class="card-price">14 lei</div><p class="card-desc">cartofi prăjiți 200g, usturoi, verdeață</p></div>
         </div>
       </div>
       <p class="section-eyebrow">Sosuri</p>
       <div class="menu-grid">
         <div class="menu-card">
-          <div class="card-img-wrap"><img class="card-img" src="./images/extra/sosuri/sosuri.jpg" alt="Sosuri" loading="lazy"></div>
-          <div class="card-body"><div class="card-name">Sos calypso, sosul casei, sos tzatziki, sos usturoi, sos samurai, sos cheddar, maioneză cu usturoi, maioneză simplă, ketchup(dulce/picant), sos napoli</div><p class="card-desc">50g</p><div class="card-price">4 lei</div></div>
+          <div class="card-img-wrap"><img class="card-img" src="./images/extra/sosuri/sosuri.jpg" alt="Sosuri" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Sos calypso, sosul casei, sos tzatziki, sos usturoi, sos samurai, sos cheddar, maioneză cu usturoi, maioneză simplă, ketchup(dulce/picant), sos napoli</div><div class="card-price">4 lei</div><p class="card-desc">50g</p></div>
         </div>
       </div>
       <p class="section-eyebrow">Extras</p>
       <div class="menu-grid">
         <div class="menu-card">
-          <div class="card-img-wrap"><img class="card-img" src="./images/extra/extras/crispy.webp" alt="Crispy" loading="lazy"></div>
-          <div class="card-body"><div class="card-name">Crispy de pui</div><p class="card-desc">Crispy pui 200g</p><div class="card-price">27 lei</div></div>
+          <div class="card-img-wrap"><img class="card-img" src="./images/extra/extras/crispy.webp" alt="Crispy" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Crispy de pui</div><div class="card-price">27 lei</div><p class="card-desc">Crispy pui 200g</p></div>
         </div>
         <div class="menu-card">
-          <div class="card-img-wrap"><img class="card-img" src="./images/extra/extras/snitel.jpg" alt="Snitel" loading="lazy"></div>
-          <div class="card-body"><div class="card-name">Șnițel panko</div><p class="card-desc">Șnițel pui/porc panko 200g</p><div class="card-price">27 lei</div></div>
+          <div class="card-img-wrap"><img class="card-img" src="./images/extra/extras/snitel.jpg" alt="Snitel" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Șnițel panko</div><div class="card-price">27 lei</div><p class="card-desc">Șnițel pui/porc panko 200g</p></div>
         </div>
         <div class="menu-card">
-          <div class="card-img-wrap"><img class="card-img" src="./images/extra/extras/gratinat.jpg" alt="gratinat" loading="lazy"></div>
-          <div class="card-body"><div class="card-name">Șnițel gratinat</div><p class="card-desc">Șnițel pui/porc panko 200g, sos napoli 50g, mozzarella 50g </p><div class="card-price">29 lei</div></div>
+          <div class="card-img-wrap"><img class="card-img" src="./images/extra/extras/gratinat.jpg" alt="gratinat" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Șnițel gratinat</div><div class="card-price">29 lei</div><p class="card-desc">Șnițel pui/porc panko 200g, sos napoli 50g, mozzarella 50g </p></div>
         </div>
         <div class="menu-card">
-          <div class="card-img-wrap"><img class="card-img" src="./images/extra/extras/lipie.jpg" alt="Lipie" loading="lazy"></div>
-          <div class="card-body"><div class="card-name">Lipie</div><p class="card-desc">Lipie proaspătă</p><div class="card-price">4 lei</div></div>
+          <div class="card-img-wrap"><img class="card-img" src="./images/extra/extras/lipie.jpg" alt="Lipie" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Lipie</div><div class="card-price">4 lei</div><p class="card-desc">Lipie proaspătă</p></div>
         </div>
         <div class="menu-card">
-          <div class="card-img-wrap"><img class="card-img" src="./images/extra/extras/mozzarella.webp" alt="Mozzarella Extra" loading="lazy"></div>
-          <div class="card-body"><div class="card-name">Mozzarella Extra</div><p class="card-desc">Mozzarella suplimentară 50g</p><div class="card-price">4 lei</div></div>
+          <div class="card-img-wrap"><img class="card-img" src="./images/extra/extras/mozzarella.webp" alt="Mozzarella Extra" loading="lazy" decoding="async"></div>
+          <div class="card-body"><div class="card-name">Mozzarella Extra</div><div class="card-price">4 lei</div><p class="card-desc">Mozzarella suplimentară 50g</p></div>
         </div>
       </div>
     </div>
@@ -317,22 +437,32 @@
       <h2 class="section-heading">Contact & <span>Program</span></h2>
       <div class="heading-rule"></div>
     </div>
-    <div class="contact-grid reveal">
-      <div class="contact-item">
-        <div class="ci-icon">📍</div>
-        <div><div class="ci-label">Adresă</div><div class="ci-val">Strada Alexandru Ioan Cuza,<br>Bloc A9, Scara A</div></div>
+    <div class="contact-layout reveal">
+      <div class="contact-photo">
+        <img src="images/hero/contact.jpg" alt="" loading="lazy" decoding="async">
+        <div class="contact-photo-scrim"></div>
+        <div class="contact-photo-caption">
+          <span>La Puff Delivery</span>
+          <p>Gătit la comandă,<br>livrat cât e cald.</p>
+        </div>
       </div>
-      <div class="contact-item">
-        <div class="ci-icon">📞</div>
-        <div><div class="ci-label">Telefon</div><div class="ci-val"><a href="tel:0724747359">0724 747 359</a></div></div>
-      </div>
-      <div class="contact-item">
-        <div class="ci-icon">🕐</div>
-        <div><div class="ci-label">Program</div><div class="ci-val">9:00 – 14:00 &amp; 18:00 – 22:00</div></div>
-      </div>
-      <div class="contact-item">
-        <div class="ci-icon">🛍</div>
-        <div><div class="ci-label">Ridicare</div><div class="ci-val">Comandă pachet,<br>ridici din sediu</div></div>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <div class="ci-icon">📍</div>
+          <div><div class="ci-label">Adresă</div><div class="ci-val"><a href="https://maps.app.goo.gl/Rqt2coo3ffEonNss6" target="_blank" rel="noopener">Strada Alexandru Ioan Cuza,<br>Bloc A9, Scara A, Urziceni, Ialomița</a></div></div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">📞</div>
+          <div><div class="ci-label">Telefon</div><div class="ci-val"><a href="tel:0724747359">0724 747 359</a></div></div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">🕐</div>
+          <div><div class="ci-label">Program</div><div class="ci-val">9:00 – 14:00 &amp; 18:00 – 22:00</div></div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">🛍</div>
+          <div><div class="ci-label">Ridicare</div><div class="ci-val">Comandă pachet,<br>ridici din sediu</div></div>
+        </div>
       </div>
     </div>
   </div>
@@ -341,7 +471,15 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo"><span>La</span> Puff Delivery</div>
-  <p>Strada Alexandru Ioan Cuza, Bloc A9, Scara A<br>☎ 0724 747 359 &nbsp;·&nbsp; 9:00 – 14:00 &amp; 18:00 – 22:00</p>
+  <p><a href="https://maps.app.goo.gl/Rqt2coo3ffEonNss6" target="_blank" rel="noopener">Strada Alexandru Ioan Cuza, Bloc A9, Scara A, Urziceni, Ialomița</a><br>☎ 0724 747 359 &nbsp;·&nbsp; 9:00 – 14:00 &amp; 18:00 – 22:00</p>
+  <div class="footer-social">
+    <a href="https://www.facebook.com/profile.php?id=61572019274112" target="_blank" rel="noopener" aria-label="La Puff Delivery pe Facebook">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.89h2.78l-.44 2.91h-2.34V22c4.78-.76 8.44-4.92 8.44-9.94Z"/></svg>
+    </a>
+    <a href="https://www.tiktok.com/@la.puff.delivery" target="_blank" rel="noopener" aria-label="La Puff Delivery pe TikTok">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M16.6 2h-3.2v13.9a2.9 2.9 0 1 1-2.05-2.77V9.9a6.1 6.1 0 1 0 5.25 6.04V8.36a7.5 7.5 0 0 0 4.4 1.4V6.53a4.3 4.3 0 0 1-4.4-4.53Z"/></svg>
+    </a>
+  </div>
   <div class="footer-tagline">Proaspăt · Rapid · Delicios</div>
   <p class="footer-allergen">⚠ Produsele din acest meniu pot conține urme de alergeni, inclusiv gluten, lactoză, nuci, soia sau alte substanțe care pot provoca reacții alergice.</p>
 </footer>
