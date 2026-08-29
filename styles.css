@@ -148,6 +148,24 @@ nav.scrolled {
   white-space: nowrap; display: inline-block;
 }
 .btn-outline:hover { background: rgba(245,166,35,0.12); border-color: var(--gold); transform: translateY(-2px); }
+.btn-order {
+  flex-basis: 100%;
+  display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap;
+  background: linear-gradient(135deg, var(--red), #ff3b30); color: var(--text);
+  padding: clamp(9px,1.8vw,12px) clamp(20px,4vw,32px);
+  font-size: clamp(12px,2vw,14px); font-weight: 800; letter-spacing: 1px; text-transform: uppercase;
+  border-radius: var(--radius-sm); text-decoration: none;
+  transition: transform 0.15s, box-shadow 0.15s;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(208,2,27,0.4);
+  animation: fadeUp 0.7s ease 0.3s both, orderPulse 2.4s ease-in-out 1s infinite;
+}
+.btn-order:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(208,2,27,0.65); animation-play-state: paused; }
+.btn-order-logo { height: clamp(26px, 6vw, 32px); width: auto; border-radius: 6px; background: #fff; padding: 3px 5px; flex-shrink: 0; }
+@keyframes orderPulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(208,2,27,0.4); }
+  50% { box-shadow: 0 4px 26px rgba(208,2,27,0.8); }
+}
 .hero-stats { display: flex; gap: clamp(1rem, 3vw, 2rem); flex-wrap: wrap; margin-top: clamp(2.2rem, 6vw, 3.6rem); animation: fadeUp 0.7s ease 0.4s both; }
 .stat-item { text-align: left; }
 .stat-val { font-family: 'Bebas Neue', sans-serif; font-size: clamp(1.5rem,4vw,2rem); color: var(--gold); letter-spacing: 2px; line-height: 1; display: flex; align-items: center; gap: 8px; }
@@ -336,7 +354,7 @@ footer p a:hover { color: var(--gold); text-decoration: underline; }
   .stat-item { text-align: center; }
   .stat-val { justify-content: center; }
   .hero-btns { flex-direction: column; align-items: center; }
-  .btn-primary, .btn-outline { width: 100%; max-width: 280px; text-align: center; }
+  .btn-primary, .btn-outline, .btn-order { width: 100%; max-width: 280px; text-align: center; }
   .tab-btn { padding: 8px 14px; font-size: 10px; letter-spacing: 1.5px; }
   .scroll-hint { display: none; }
 }
@@ -355,8 +373,8 @@ footer p a:hover { color: var(--gold); text-decoration: underline; }
   .hero-img { animation: none; }
   .flame { animation: none; }
   .scroll-line { animation: none; }
-  .hero-badge, .hero h1, .hero-sub, .hero-btns, .hero-stats, .scroll-hint { animation: none; opacity: 1; transform: none; }
+  .hero-badge, .hero h1, .hero-sub, .hero-btns, .hero-stats, .scroll-hint, .btn-order { animation: none; opacity: 1; transform: none; }
   .reveal { transition: none; opacity: 1; transform: none; }
   .menu-panel.active { animation: none; }
-  .menu-card, .card-img, .contact-item, .btn-primary, .btn-outline { transition: none; }
+  .menu-card, .card-img, .contact-item, .btn-primary, .btn-outline, .btn-order { transition: none; }
 }
