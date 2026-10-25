@@ -87,19 +87,22 @@ function updateStatus() {
   if (!dot || !text) return;
 
   const now = new Date();
+  const day = now.getDay(); // 0 = Sunday
   const mins = now.getHours() * 60 + now.getMinutes();
-  const LUNCH_START = 9 * 60, LUNCH_END = 14 * 60, DINNER_START = 18 * 60, DINNER_END = 22 * 60;
-  const isOpen = (mins >= LUNCH_START && mins < LUNCH_END) || (mins >= DINNER_START && mins < DINNER_END);
+  const OPEN_START = 11 * 60, OPEN_END = 20 * 60;
+  const isOpen = day !== 0 && mins >= OPEN_START && mins < OPEN_END;
 
   let label;
   if (isOpen) {
-    label = mins < LUNCH_END ? `Deschis · până la ${fmtMins(LUNCH_END)}` : `Deschis · până la ${fmtMins(DINNER_END)}`;
-  } else if (mins < LUNCH_START) {
-    label = `Deschidem la ${fmtMins(LUNCH_START)}`;
-  } else if (mins < DINNER_START) {
-    label = `Deschidem la ${fmtMins(DINNER_START)}`;
+    label = `Deschis · până la ${fmtMins(OPEN_END)}`;
+  } else if (day === 0) {
+    label = `Închis duminica · Deschidem luni la ${fmtMins(OPEN_START)}`;
+  } else if (mins < OPEN_START) {
+    label = `Deschidem la ${fmtMins(OPEN_START)}`;
+  } else if (day === 6) {
+    label = `Deschidem luni la ${fmtMins(OPEN_START)}`;
   } else {
-    label = `Deschidem mâine la ${fmtMins(LUNCH_START)}`;
+    label = `Deschidem mâine la ${fmtMins(OPEN_START)}`;
   }
 
   dot.classList.toggle('is-open', isOpen);
